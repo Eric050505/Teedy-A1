@@ -1,0 +1,33 @@
+<div>
+  <h2>User Applications</h2>
+  
+  <div ng-if="applications.length === 0" class="alert alert-info">
+    No pending user applications
+  </div>
+
+  <table class="table table-hover" ng-if="applications.length > 0">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Application Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="application in applications">
+        <td>{{ application.username }}</td>
+        <td>{{ application.email }}</td>
+        <td>{{ application.date | date: dateFormat }}</td>
+        <td>
+          <button class="btn btn-success btn-sm" ng-click="approveApplication(application)">
+            <span class="fas fa-check"></span> Approve
+          </button>
+          <button class="btn btn-danger btn-sm" ng-click="rejectApplication(application)">
+            <span class="fas fa-times"></span> Reject
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> 

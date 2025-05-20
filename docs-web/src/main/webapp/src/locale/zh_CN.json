@@ -2,19 +2,20 @@
   "login": {
     "username": "用户名",
     "password": "密码",
-    "validation_code_required": "请输入验证码",
-    "validation_code_title": "您的帐号已经激活了双身份验证. 请输入您配置手机app的提供的验证码.",
+    "validation_code_required": "需要验证码",
+    "validation_code_title": "您已经在账户上启用了双因素认证。请输入手机应用生成的验证码。",
     "validation_code": "验证码",
     "remember_me": "记住我",
     "submit": "登录",
-    "login_as_guest": "以游客身份登录",
+    "login_as_guest": "以访客身份登录",
     "login_failed_title": "登录失败",
-    "login_failed_message": "用户名或密码不正确",
-    "password_lost_btn": "密码丢失？",
+    "login_failed_message": "用户名或密码无效",
+    "password_lost_btn": "忘记密码？",
+    "register_btn": "注册新账户",
     "password_lost_sent_title": "密码重置邮件已发送",
-    "password_lost_sent_message": "重置密码的邮件已经发送至<strong>{{ username }}</strong>",
-    "password_lost_error_title": "密码重置出错",
-    "password_lost_error_message": "无法发送密码重置邮件，请联系您的管理员进行手动重置"
+    "password_lost_sent_message": "已向 <strong>{{ username }}</strong> 发送密码重置邮件",
+    "password_lost_error_title": "密码重置错误",
+    "password_lost_error_message": "无法发送密码重置邮件，请联系管理员手动重置"
   },
   "passwordlost": {
     "title": "丢失密码",
@@ -223,6 +224,24 @@
       "related_links": "相关链接",
       "document_created": "文档由 {{ username }} 创建",
       "edit_user": "编辑 {{ username }} 用户"
+    },
+    "applications": {
+      "title": "用户申请管理",
+      "no_pending": "当前没有待处理的用户申请",
+      "username": "用户名",
+      "email": "电子邮箱",
+      "date": "申请日期",
+      "actions": "操作",
+      "approve": "同意",
+      "reject": "拒绝",
+      "approve_success_title": "申请已通过",
+      "approve_success_message": "用户 {{ username }} 已成功创建",
+      "approve_error_title": "创建用户失败",
+      "approve_error_message": "创建用户时发生错误，请稍后重试",
+      "reject_confirm_title": "确认拒绝",
+      "reject_confirm_message": "您确定要拒绝用户 {{ username }} 的申请吗？",
+      "save_error_title": "保存失败",
+      "save_error_message": "无法保存更改，请稍后重试"
     }
   },
   "usergroup": {
@@ -507,5 +526,24 @@
   "loading": "加载中...",
   "send": "发送",
   "enabled": "激活",
-  "disabled": "未激活"
+  "disabled": "未激活",
+  "userreg": {
+    "title": "注册新用户",
+    "username": "用户名",
+    "email": "电子邮箱",
+    "password": "密码",
+    "password_confirm": "确认密码",
+    "submit": "提交申请",
+    "back_to_login": "返回登录",
+    "error": {
+      "duplicate_title": "用户名已存在",
+      "duplicate_message": "该用户名已在申请列表中",
+      "save_title": "保存失败",
+      "save_message": "无法保存用户申请，请稍后重试"
+    },
+    "success": {
+      "title": "申请已提交",
+      "message": "您的用户注册申请已提交，请等待管理员审核"
+    }
+  }
 }

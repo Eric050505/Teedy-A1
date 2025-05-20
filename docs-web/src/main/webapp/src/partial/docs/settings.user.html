@@ -1,6 +1,10 @@
 <h1>
   <span translate="settings.user.title"></span>
   <a class="btn btn-primary" href="#/settings/user/add">{{ 'settings.user.add_user' | translate }}</a>
+  <a class="btn btn-default" href="#/settings/user/applications">
+    {{ 'settings.user.applications.title' | translate }}
+    <span class="badge" ng-if="applications.length > 0">{{ applications.length }}</span>
+  </a>
 </h1>
 
 <div class="row">
