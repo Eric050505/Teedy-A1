@@ -3,7 +3,7 @@
 /**
  * File modal view controller.
  */
-angular.module('docs').controller('FileModalView', function ($uibModalInstance, $scope, $state, $stateParams, $sce, Restangular, $transitions) {
+angular.module('docs').controller('FileModalView', function ($uibModalInstance, $scope, $state, $stateParams, $sce, Restangular, $transitions, $uibModal) {
   var setFile = function (files) {
     // Search current file
     _.each(files, function (value) {
@@ -122,5 +122,33 @@ angular.module('docs').controller('FileModalView', function ($uibModalInstance, 
    */
   $scope.canDisplayPreview = function () {
     return $scope.file && $scope.file.mimetype !== 'application/pdf';
+  };
+
+  /**
+   * Open file editor.
+   */
+  $scope.editFile = function() {
+    if ($scope.file && $scope.file.mimetype.indexOf('image/') === 0) {
+      var modalInstance = $uibModal.open({
+        templateUrl: 'partial/docs/file.edit.html',
+        controller: 'FileEdit',
+        size: 'lg',
+        resolve: {
+          file: function() {
+            return $scope.file;
+          }
+        }
+      });
+
+      modalInstance.result.then(function() {
+        // Reload the file after editing
+        $scope.file.version++;
+        // Force reload the image
+        var img = document.querySelector('img[ng-src="../api/file/' + $stateParams.fileId + '/data?size=web"]');
+        if (img) {
+          img.src = '../api/file/' + $stateParams.fileId + '/data?size=web&_=' + new Date().getTime();
+        }
+      });
+    }
   };
 });

@@ -1,0 +1,26 @@
+<div class="modal-header">
+  <h3>{{ 'file.edit.title' | translate }}</h3>
+</div>
+
+<div class="modal-body">
+  <div class="image-editor">
+    <div class="cropper-container">
+      <img id="image-to-crop" crossorigin="anonymous" />
+    </div>
+    <div class="cropper-controls mt-3">
+      <div class="btn-group">
+        <button class="btn btn-default" ng-click="rotate(-90)">
+          <span class="fas fa-undo"></span>
+        </button>
+        <button class="btn btn-default" ng-click="rotate(90)">
+          <span class="fas fa-redo"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button class="btn btn-default" ng-click="cancel()">{{ 'cancel' | translate }}</button>
+  <button class="btn btn-primary" ng-click="save()">{{ 'save' | translate }}</button>
+</div> 
